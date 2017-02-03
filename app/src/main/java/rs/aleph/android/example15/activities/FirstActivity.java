@@ -32,6 +32,7 @@ public class FirstActivity extends Activity {
 		toast.show();
 
         // Loads fruits from array resource
+
         final List<String> fruitNames = FruitProvider.getFruitNames();
 
         // Creates an ArrayAdaptar from the array of String
@@ -42,6 +43,8 @@ public class FirstActivity extends Activity {
         listView.setAdapter(dataAdapter);
 
         // Starts the SecondActivity and sends it the selected URL as an extra data
+		// Kada se klikne otvori objekat
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(FirstActivity.this, SecondActivity.class);

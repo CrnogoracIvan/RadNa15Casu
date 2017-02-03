@@ -7,3 +7,4 @@
         android:drawableLeft="@drawable/ic_action_search"
         android:padding="10dp"
         android:textSize="30sp" />
+<!--> Sluzi za prikaz pojedinacne vocke u samoj listi<-->

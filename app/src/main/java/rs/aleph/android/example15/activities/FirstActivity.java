@@ -30,21 +30,23 @@ public class FirstActivity extends Activity {
 		// Shows a toast message (a pop-up message)
 		Toast toast = Toast.makeText(getBaseContext(), "FirstActivity.onCreate()", Toast.LENGTH_SHORT);
 		toast.show();
-
+//-----------------Lista---------------------------------------------
         // Loads fruits from array resource
-
+        //Ucitava listu iz Frut provajder klase
         final List<String> fruitNames = FruitProvider.getFruitNames();
 
         // Creates an ArrayAdaptar from the array of String
+        //kreira adapter od niza stingova koji ce imati izgled povucen iz list_item xml-a
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.list_item, fruitNames);
         ListView listView = (ListView) findViewById(R.id.listofFruits);
 
         // Assigns ArrayAdaptar to ListView
+        // Dodaje Adapter na list view
         listView.setAdapter(dataAdapter);
+//-----------------------------------------------------------------------
 
         // Starts the SecondActivity and sends it the selected URL as an extra data
 		// Kada se klikne otvori objekat
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(FirstActivity.this, SecondActivity.class);

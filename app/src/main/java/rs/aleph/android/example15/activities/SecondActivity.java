@@ -60,13 +60,18 @@ public class SecondActivity extends Activity {
         // Finds "tvDescription" TextView and sets "text" property
         TextView tvDescription = (TextView) findViewById(R.id.tv_description);
         tvDescription.setText(FruitProvider.getFruitById(position).getDescription());
-
+//-----------------------------------------------------------------------------------------------------------------------------------
         // Finds "spCategory" Spiner and sets "selection" property
+        // Slicna prica kao u listi
         Spinner category = (Spinner) findViewById(R.id.sp_category);
+
+        //----
         List<String> categories = CategoryProvider.getCategoryNames();
         ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, categories);
+
         category.setAdapter(adapter);
         category.setSelection((int)FruitProvider.getFruitById(position).getCategory().getId());
+//----------------------------------------------------------------------------------------------------------------------------------
 
         // Finds "rbRating" RatingBar and sets "rating" property
         RatingBar rbRating = (RatingBar) findViewById(R.id.rb_rating);
